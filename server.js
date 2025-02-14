@@ -1,13 +1,13 @@
 const express = require("express");
 const path = require("path");
 const dotenv = require('dotenv')
-
+const cors = require('cors')
 const app = express();
 
 dotenv.config()
 const PORT = process.env.PORT || 3008;
 
-
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
@@ -31,7 +31,7 @@ app.get("/getPage", (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on ${PORT}`);
 });
 
 
