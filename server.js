@@ -16,17 +16,19 @@ app.use(express.urlencoded({extended:true}))
 
 //app.use(express.static(path.join(__dirname, "public")))
 
-console.log(path.join(__dirname, "dist"))
+//console.log(path.join(__dirname, "dist"))
 
 // Route to serve the HTML file
 app.get("/", (req, res) => {
    // console.log('req is coming to server',req)
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
+  //res.sendFile(path.join(__dirname, "dist", "index.html"));
+  res.json({result:"index.html"})
 })
 
 app.get("/getPage", (req, res) => {
     //console.log('req is coming to server',req)
-  res.sendFile(path.join(__dirname, "dist", "index2.html"));
+ // res.sendFile(path.join(__dirname, "dist", "index2.html"));
+ res.json({result:"index2.html"})
 })
 
 // Start the server
